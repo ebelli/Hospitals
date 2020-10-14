@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.detail.DetailActivity">
+
+    <TextView
+        android:id="@+id/detail_hospital_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="TextView"
+        style="@style/HospitalName"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/detail_hospital_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="OrganisationType"
+        style="@style/HospitalInfo"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/detail_hospital_name" />
+
+    <TextView
+        android:id="@+id/detail_hospital_sector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="OrganisationType"
+        style="@style/HospitalInfo"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/detail_hospital_type" />
+
+     <TextView
+        android:id="@+id/detail_hospital_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="City"
+        style="@style/HospitalInfo"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/detail_hospital_sector" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="12dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

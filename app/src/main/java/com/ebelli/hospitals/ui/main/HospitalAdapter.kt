@@ -9,6 +9,7 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.ebelli.hospitals.R
 import com.ebelli.hospitals.data.entities.HospitalEntity
+import com.ebelli.hospitals.ui.detail.DetailActivity
 import kotlinx.android.synthetic.main.item_list_hospital.view.*
 
 const val HOSPITAL_EXTRA = "HOSPITAL"
@@ -41,7 +42,7 @@ class HospitalAdapter: RecyclerView.Adapter<HospitalAdapter.HospitalViewHolder>(
             hospital_name.text = hospital.organisationName
             hospital_city.text = hospital.city
 
-//            itemView.setOnClickListener{ openDetails(hospital, itemView) }
+            itemView.setOnClickListener{ openDetails(hospital, itemView) }
         }
 
         private fun openAlbum(url: String, view: View) {
@@ -55,12 +56,12 @@ class HospitalAdapter: RecyclerView.Adapter<HospitalAdapter.HospitalViewHolder>(
             startActivity(view.context, shareIntent, null)
         }
 
-//        private fun openDetails(album: HospitalEntity, view: View) {
-//            val intent = Intent(view.context, DetailActivity::class.java)
-//                .apply {
-//                    putExtra(HOSPITAL_EXTRA, album)
-//                }
-//            startActivity(view.context, intent, null)
-//        }
+        private fun openDetails(album: HospitalEntity, view: View) {
+            val intent = Intent(view.context, DetailActivity::class.java)
+                .apply {
+                    putExtra(HOSPITAL_EXTRA, album)
+                }
+            startActivity(view.context, intent, null)
+        }
     }
 }
