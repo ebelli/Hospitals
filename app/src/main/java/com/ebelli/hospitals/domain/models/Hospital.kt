@@ -1,4 +1,4 @@
-package com.ebelli.hospitals.domain.model
+package com.ebelli.hospitals.domain.models
 
 import com.google.gson.annotations.SerializedName
 
@@ -28,5 +28,17 @@ import com.google.gson.annotations.SerializedName
  */
 data class Hospital (
     @SerializedName("OrganisationID")
-    val id: Int
+    val id: Int,
+    @SerializedName("OrganisationCode")
+    val organisationCode: String,
+    @SerializedName("OrganisationType")
+    val organisationType: String,
+    @SerializedName("Sector")
+    val sector: String,
+    @SerializedName("IsPimsManaged")
+    val isPimsManaged: Boolean,
+    @SerializedName("OrganisationName")
+    val organisationName: String,
+    @SerializedName("City")
+    val city: String
 )
