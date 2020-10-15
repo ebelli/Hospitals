@@ -45,21 +45,10 @@ class HospitalAdapter: RecyclerView.Adapter<HospitalAdapter.HospitalViewHolder>(
             itemView.setOnClickListener{ openDetails(hospital, itemView) }
         }
 
-        private fun openAlbum(url: String, view: View) {
-            val sendIntent: Intent = Intent().apply {
-                action = Intent.ACTION_SEND
-                putExtra(Intent.EXTRA_TEXT, url)
-                type = "text/plain"
-            }
-
-            val shareIntent = Intent.createChooser(sendIntent, null)
-            startActivity(view.context, shareIntent, null)
-        }
-
-        private fun openDetails(album: HospitalEntity, view: View) {
+        private fun openDetails(hospital: HospitalEntity, view: View) {
             val intent = Intent(view.context, DetailActivity::class.java)
                 .apply {
-                    putExtra(HOSPITAL_EXTRA, album)
+                    putExtra(HOSPITAL_EXTRA, hospital)
                 }
             startActivity(view.context, intent, null)
         }

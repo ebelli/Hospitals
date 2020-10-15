@@ -36,11 +36,11 @@ class HospitalRepositoryImplTest {
 
 
     @Test
-    fun `get list of albums when calling endpoint`() {
-        val albums = get2Hospitals()
+    fun `get list of hospitals when calling endpoint`() {
+        val hospitals = get2Hospitals()
         runBlockingTest {
             Mockito.`when`(apiDataStore.getHospitals())
-                .thenReturn(albums)
+                .thenReturn(hospitals)
 
             val result = hospitalRepository.getHospitals()
             Assert.assertEquals(result.size , 2)

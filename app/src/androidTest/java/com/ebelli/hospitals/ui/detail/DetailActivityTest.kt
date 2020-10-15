@@ -16,7 +16,7 @@ class DetailActivityTest {
 
 
     private val intent = Intent(ApplicationProvider.getApplicationContext(), DetailActivity::class.java)
-        .putExtra(HOSPITAL_EXTRA, getAlbum())
+        .putExtra(HOSPITAL_EXTRA, getHospital())
 
     @Test
     fun elementsAreVisible() {
@@ -35,7 +35,7 @@ class DetailActivityTest {
         activityScenario.close()
     }
 
-    private fun getAlbum() = HospitalEntity(
+    private fun getHospital() = HospitalEntity(
         id = 1421,
         organisationCode = "RV9HE",
         organisationType = "Hospital",

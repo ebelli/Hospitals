@@ -54,7 +54,7 @@ class MainViewModelTest {
     }
 
     @Test
-    fun `when getting albums return error`() {
+    fun `when getting hospitals return error`() {
         runBlockingTest {
             Mockito.`when`(hospitalRepository.getHospitals())
                 .thenThrow(RuntimeException())
@@ -71,7 +71,7 @@ class MainViewModelTest {
     }
 
     @Test
-    fun `when getting albums return empty list throw error`() {
+    fun `when getting hospitals return empty list throw error`() {
         runBlockingTest {
             Mockito.`when`(hospitalRepository.getHospitals())
                 .thenReturn(emptyList())
@@ -89,7 +89,7 @@ class MainViewModelTest {
     }
 
     @Test
-    fun `when getting albums return list of albums`() {
+    fun `when getting hospitals return list of hospitals`() {
         runBlockingTest {
             Mockito.`when`(hospitalRepository.getHospitals())
                 .thenReturn(getHospitalEntityList())

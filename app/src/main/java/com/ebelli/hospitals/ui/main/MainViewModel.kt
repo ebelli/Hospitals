@@ -19,11 +19,11 @@ class MainViewModel(private val hospitalRepository: HospitalRepository, private 
         viewModelScope.launch(coroutineContext) {
             _hospitals.postValue(Resource.Loading())
             try {
-                val album = hospitalRepository.getHospitals()
-                if (album.isNullOrEmpty()) {
+                val hospitals = hospitalRepository.getHospitals()
+                if (hospitals.isNullOrEmpty()) {
                     _hospitals.postValue(Resource.Error("Cannot retrieve hospitals"))
                 } else {
-                    _hospitals.postValue(Resource.Success(album))
+                    _hospitals.postValue(Resource.Success(hospitals))
                 }
             } catch (e: Exception) {
                 _hospitals.postValue(Resource.Error( e.toString()))
